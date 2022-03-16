@@ -4,7 +4,7 @@ import { HeroSection } from '../components/HeroSection'
  
 const Home: NextPage = () => {
   return (
-   <Flex maxW={900} h="100vh" justify="center" align="center">
+   <Flex h="100vh" align="center">
      <HeroSection />
    </Flex>
   )
