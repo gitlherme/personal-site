@@ -1,11 +1,11 @@
 import { Flex } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Header } from '../components/Header'
+import { HeroSection } from '../components/HeroSection'
  
 const Home: NextPage = () => {
   return (
    <Flex maxW={900} h="100vh" justify="center" align="center">
-     <Header />
+     <HeroSection />
    </Flex>
   )
 }
