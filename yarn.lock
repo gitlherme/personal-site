@@ -767,6 +767,14 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@graphcms/rich-text-react-renderer@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@graphcms/rich-text-react-renderer/-/rich-text-react-renderer-0.4.2.tgz#c8cd757b53c2fbef8b64241ecfa0b2d0955e6bee"
+  integrity sha512-xnqKl0sg4ycySSDLdo1FwHhOMvDmiFwwoQswkOgGvFA74/jvT+p+uwNLuE2KTlmxaBz6dhCCCCU7XEFS/gYo2g==
+  dependencies:
+    "@graphcms/rich-text-types" "^0.3.1"
+    escape-html "^1.0.3"
+
 "@graphcms/rich-text-types@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@graphcms/rich-text-types/-/rich-text-types-0.3.1.tgz#ee8cec326f42e710970f372b9fde2f70e34c5e9c"
@@ -1401,6 +1409,11 @@ es-to-primitive@^1.2.1:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+escape-html@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
+  integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
 
 escape-string-regexp@^1.0.5:
   version "1.0.5"

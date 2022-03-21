@@ -2,13 +2,14 @@ import { Link } from "@chakra-ui/react";
 
 interface ButtonProps {
   href: string;
+  target?: string;
   children: React.ReactNode;
 }
 
-export function Button({ href, children }: ButtonProps) {
+export function Button({ href, target, children }: ButtonProps) {
   return (
     <Link 
-      target="_blank"
+      target={target ? target : '_blank'}
       href={href}
       maxW={200}
       bg="blackAlpha.700"

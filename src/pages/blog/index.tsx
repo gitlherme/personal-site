@@ -1,23 +1,27 @@
-import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import { gql } from '@apollo/client';
 import { Box, Heading } from '@chakra-ui/react';
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import { Posts, PostsProps } from "../../components/Posts";
+import { client } from '../../services/apolloClient';
 
-const client = new ApolloClient({
-  uri: 'https://api-sa-east-1.graphcms.com/v2/cl0zzhq9u5aoc01z3d6hz6geb/master',
-  cache: new InMemoryCache()
-})
 
 
 export default function Blog({posts}: PostsProps) {
   return (
-    <Box mt="3rem">
-      <Heading as="h1" mb="3rem">POSTS 📰</Heading>
-      <Posts posts={posts}/>
-    </Box>
+    <>
+      <Head>
+        <title>Posts</title>
+      </Head>
+      <Box mt="3rem">
+        <Heading as="h1" mb="3rem">POSTS 📰</Heading>
+        <Posts posts={posts}/>
+      </Box>
+    </>
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = client.query({
     query: gql`
       {
