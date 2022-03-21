@@ -3,7 +3,7 @@ import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
 export default function About() {
   return (
     <Flex direction="column" mt="3rem">
-      <Heading as="h1" mb="3rem">ABOUT ME</Heading>
+      <Heading as="h1" mb="3rem">ABOUT ME 🥳</Heading>
       <VStack gap="20px" fontSize="18px">
         <Text>
           I was born in São Paulo, Brazil. Since my childhood I has access to computer because my parents has a lan house. I knew HTML around the 2010s decade, when I created a blog to share my experiences with Club Penguin. Games are my hobbie since early and in 2015 I entered in a technical course focused in programming to develop skills to create my own games. In this course, I has my first contact with others languages focused in frontend development, like CSS and Javascript, and I discovered a great afinity with these skills.

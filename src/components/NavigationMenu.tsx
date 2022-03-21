@@ -6,6 +6,7 @@ export function NavigationMenu() {
     <Flex as="nav" gap="4" justify="center">
       <Link href="/">Home</Link>
       <Link href="/about">About me</Link>
+      <Link href="/blog">Blog</Link>
     </Flex>
   )
 }

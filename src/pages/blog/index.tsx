@@ -1,4 +1,5 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import { Box, Heading } from '@chakra-ui/react';
 import { Posts, PostsProps } from "../../components/Posts";
 
 const client = new ApolloClient({
@@ -9,7 +10,10 @@ const client = new ApolloClient({
 
 export default function Blog({posts}: PostsProps) {
   return (
-    <Posts posts={posts}/>
+    <Box mt="3rem">
+      <Heading as="h1" mb="3rem">POSTS 📰</Heading>
+      <Posts posts={posts}/>
+    </Box>
   )
 }
 
@@ -20,6 +24,7 @@ export async function getStaticProps() {
         posts {
           title,
           slug,
+          description,
           content {
             html
           }
