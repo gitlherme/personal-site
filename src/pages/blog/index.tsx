@@ -1,8 +1,9 @@
 import { gql } from '@apollo/client';
-import { Box, Heading } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { Posts, PostsProps } from "../../components/Posts";
+import Title from '../../components/Title';
 import { client } from '../../services/apolloClient';
 
 
@@ -14,7 +15,7 @@ export default function Blog({posts}: PostsProps) {
         <title>Posts</title>
       </Head>
       <Box mt="3rem">
-        <Heading as="h1" mb="3rem">POSTS 📰</Heading>
+        <Title text="Posts 📰" />
         <Posts posts={posts}/>
       </Box>
     </>

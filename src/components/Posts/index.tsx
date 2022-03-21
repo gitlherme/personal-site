@@ -18,7 +18,7 @@ export function Posts({ posts }: PostsProps) {
   return (
     <Flex gap="4">
       {
-        posts ? posts.map(post => {
+        posts.length ? posts.map(post => {
           return (
             <Flex key={post.title} direction="column" gap="2" maxW="50%" bg="blackAlpha.300" p="6" borderRadius={8}>
               <Heading as="h2" fontSize={22}>{post.title}</Heading>

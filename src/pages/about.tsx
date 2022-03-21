@@ -1,26 +1,46 @@
-import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { gql } from "@apollo/client";
+import { Flex, Text } from "@chakra-ui/react";
+import { GetStaticProps } from "next";
 import Head from "next/head";
+import Title from "../components/Title";
+import { client } from "../services/apolloClient";
 
-export default function About() {
+export interface AboutProps {
+  title: string;
+  content: {
+    html: string;
+  }
+}
+
+export default function About({ title, content }: AboutProps) {
   return (
     <>
       <Head>
         <title>About me</title>
       </Head>
-      <Flex direction="column" mt="3rem">
-        <Heading as="h1" mb="3rem">ABOUT ME 🥳</Heading>
-        <VStack gap="20px" fontSize="18px">
-          <Text>
-            I was born in São Paulo, Brazil. Since my childhood I has access to computer because my parents has a lan house. I knew HTML around the 2010s decade, when I created a blog to share my experiences with Club Penguin. Games are my hobbie since early and in 2015 I entered in a technical course focused in programming to develop skills to create my own games. In this course, I has my first contact with others languages focused in frontend development, like CSS and Javascript, and I discovered a great afinity with these skills.
-          </Text>
-          <Text>
-            After my high school, I started my studies at Impacta - a university focused in technology based in Brazil - in Analysis and Development Systems. I started to go in many hackathons to increase my hard and soft skills, and in August, 2018, I entered in a internship at Prefeitura de São Paulo.
-          </Text>
-          <Text>
-            Today I&apos;m MBA in Full Stack Development by IGTI and work with frontend development at JUST Digital, using technologies like HTML, CSS, Javascript, Drupal, and Acquia Site Studio. Currently, I&apos;m learning about React and Next, GraphQL, Vue and Nuxt and Typescript.
-          </Text>
-        </VStack>
+      <Flex direction="column" >
+        <Title text={title} />
+        <Text fontSize="18px" dangerouslySetInnerHTML={{ __html: content.html }}  />
       </Flex>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const content = client.query({
+    query: gql`
+      {
+        simpleContent(where: { id: "cl10tl1xl05n80bkf6yve4nvh" }) {
+          title,
+          content {
+            html
+          }
+        }
+      }
+    `
+  })
+  
+  return {
+    props: (await content).data.simpleContent
+  }
 }
