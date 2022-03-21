@@ -31,6 +31,7 @@ export const getStaticProps: GetStaticProps = async () => {
   })
   
   return {
-    props: (await content).data.simpleContent
+    props: (await content).data.simpleContent,
+    revalidate: 60 * 60 * 24 // every 24 hours
   }
 }
