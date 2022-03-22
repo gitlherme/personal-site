@@ -8,13 +8,16 @@ export const theme = extendTheme({
         color: 'whiteAlpha.900',
       },
       a: {
-        _hover: {
-          color: "red.300",
-          textDecoration: "none"
-        }
+        color: "red.300"
       },
       p: {
-        lineHeight: "32px"
+        lineHeight: "2rem",
+        margin: ".5rem 0"
+      },
+      pre: {
+        backgroundColor: "blackAlpha.900",
+        padding: "1rem",
+        borderRadius: "8px",
       }
     }
   },

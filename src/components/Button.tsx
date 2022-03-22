@@ -18,6 +18,7 @@ export function Button({ href, target, children }: ButtonProps) {
       textAlign="center"
       _hover={
         {
+          color: 'white',
           bg: "blackAlpha.900",
           textDecoration: "none",
         }

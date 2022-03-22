@@ -2,6 +2,7 @@ import { gql } from "@apollo/client";
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import styles from '../../../styles/Post.module.scss';
 import { client } from "../../services/apolloClient";
 
 
@@ -22,7 +23,7 @@ export default function Post({ post }: PostProps) {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <Flex mt="3rem" direction="column" gap="4">
+      <Flex mt="3rem" direction="column" gap="4" mb={24} className={styles.post}>
         <Heading as="h1">{post.title}</Heading>
         <Text gap="2" as="article" dangerouslySetInnerHTML={{ __html: post.content.html }} />
       </Flex>

@@ -1,7 +1,8 @@
 import { gql } from "@apollo/client";
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Stack, Text } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import { CustomDivider } from "../components/Divider";
 import Title from "../components/Title";
 import { client } from "../services/apolloClient";
 
@@ -18,10 +19,13 @@ export default function About({ title, content }: AboutProps) {
       <Head>
         <title>About me</title>
       </Head>
-      <Flex direction="column" >
+      <Flex direction="column">
         <Title text={title} />
         <Text fontSize="18px" dangerouslySetInnerHTML={{ __html: content.html }}  />
       </Flex>
+      <Stack mt="5rem">
+        <CustomDivider />
+      </Stack>
     </>
   )
 }
