@@ -9,7 +9,7 @@ interface ButtonProps {
 export function Button({ href, target, children }: ButtonProps) {
   return (
     <Link 
-      target={target ? target : '_blank'}
+      target={target}
       href={href}
       maxW={200}
       bg="blackAlpha.700"
