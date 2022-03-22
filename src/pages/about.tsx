@@ -21,7 +21,7 @@ export default function About({ title, content }: AboutProps) {
       </Head>
       <Flex direction="column">
         <Title text={title} />
-        <Text fontSize="18px" dangerouslySetInnerHTML={{ __html: content.html }}  />
+        <Text as="div" fontSize="18px" dangerouslySetInnerHTML={{ __html: content.html }}  />
       </Flex>
       <Stack mt="5rem">
         <CustomDivider />
