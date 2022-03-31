@@ -14,7 +14,7 @@ export function HeroSection({ ...hero }: HeroProps ) {
     <Flex gap={6} direction="column">
       <Heading as="h1" textTransform="uppercase">{hero.title}</Heading>
       <Text maxW={700} dangerouslySetInnerHTML={{ __html: hero.content.html }} />
-      <Button href="https://twitter.com/gitlherme">Follow me on twitter</Button>
+      <Button href="https://github.com/gitlherme">Follow me on Github</Button>
       <CustomDivider />
     </Flex>
   )
