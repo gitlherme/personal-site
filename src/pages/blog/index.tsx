@@ -41,6 +41,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts: (await posts).data.posts
     },
-    revalidate: 60 * 60 * 2 // every 2 hours
+    revalidate: 60 * 60 * 24 // every 24 hours
   }
 }

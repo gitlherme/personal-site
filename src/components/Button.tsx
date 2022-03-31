@@ -9,7 +9,7 @@ interface ButtonProps {
 export function Button({ href, target, children }: ButtonProps) {
   return (
     <Link 
-      target={target ? target : '_blank'}
+      target={target}
       href={href}
       maxW={200}
       bg="blackAlpha.700"
@@ -18,6 +18,7 @@ export function Button({ href, target, children }: ButtonProps) {
       textAlign="center"
       _hover={
         {
+          color: 'white',
           bg: "blackAlpha.900",
           textDecoration: "none",
         }
