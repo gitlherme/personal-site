@@ -13,7 +13,7 @@ export function HeroSection({ ...hero }: HeroProps ) {
   return (
     <Flex gap={6} direction="column">
       <Heading as="h1" textTransform="uppercase">{hero.title}</Heading>
-      <Text maxW={700} dangerouslySetInnerHTML={{ __html: hero.content.html }} />
+      <Text as="div" maxW={700} dangerouslySetInnerHTML={{ __html: hero.content.html }} />
       <Button href="https://github.com/gitlherme">Follow me on Github</Button>
       <CustomDivider />
     </Flex>
