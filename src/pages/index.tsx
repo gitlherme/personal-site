@@ -2,12 +2,10 @@ import { gql } from '@apollo/client'
 import { Flex } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { HeroProps, HeroSection } from '../components/HeroSection'
 import { client } from '../services/apolloClient'
  
 export default function Home({ ...hero }: HeroProps) {
-  const { locale } = useRouter()
   return (
    <Flex h="calc(100vh - 48px)"  align="center">
      <Head>
@@ -20,7 +18,6 @@ export default function Home({ ...hero }: HeroProps) {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const locale = context.locale === 'en-US' ? 'en' : 'pt_br'
-  console.log(locale)
   const content = client.query({
     query: gql`
       {
