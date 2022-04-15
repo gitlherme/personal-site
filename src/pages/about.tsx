@@ -30,11 +30,12 @@ export default function About({ title, content }: AboutProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context) => {
+  const locale = context.locale === 'en-US' ? 'en' : 'pt_br'
   const content = client.query({
     query: gql`
       {
-        simpleContent(where: { id: "cl10tl1xl05n80bkf6yve4nvh" }) {
+        simpleContent(where: { id: "cl10tl1xl05n80bkf6yve4nvh" }, locales: ${locale}) {
           title,
           content {
             html
