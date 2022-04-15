@@ -8,7 +8,7 @@ export function NavigationMenu() {
   const { locale } = useRouter()
   const localeLinks = navLinks[locale as keyof typeof navLinks]
   return (
-    <Flex as="nav" gap="4" justify="center">
+    <Flex as="nav" gap="4" justify="center" direction={["column", "row"]}>
       {
         localeLinks.map(({ title, link }) => {
           return (
