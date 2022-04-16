@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { Box, Flex, Icon, Menu, MenuButton, MenuItem, MenuList, useColorMode } from "@chakra-ui/react";
 import { RiMenuLine } from "react-icons/ri";
 import { Flags } from "./Flags";
 import { NavigationMenu } from "./NavigationMenu";
@@ -6,6 +6,8 @@ import { SocialMediaBlock } from "./SocialMediaBlock";
 import { ToggleColorMode } from "./ToggleColorMode";
 
 export function Header() {
+  const { colorMode } = useColorMode()
+  const bg = colorMode === "light" ? "white" : "gray.800";
   return (
     <Box>
       <Flex justify="space-between" py="0.5rem" display={["flex", "none"]}>
@@ -19,12 +21,13 @@ export function Header() {
             <MenuList
               w="100vw"
               h="30vh"
-              bg="black"
+              bg={bg}
               border="none"
               borderRadius="none"
               display="flex"
               flexDirection="column"
               justifyContent="space-between"
+              boxShadow="none"
             >
               <MenuItem _hover={{ bg: "transparent" }} _focus={{ bg: "transparent" }}>
                 <NavigationMenu />
