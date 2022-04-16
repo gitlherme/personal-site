@@ -3,6 +3,7 @@ import { RiMenuLine } from "react-icons/ri";
 import { Flags } from "./Flags";
 import { NavigationMenu } from "./NavigationMenu";
 import { SocialMediaBlock } from "./SocialMediaBlock";
+import { ToggleColorMode } from "./ToggleColorMode";
 
 export function Header() {
   return (
@@ -40,6 +41,7 @@ export function Header() {
         <NavigationMenu />
         <Flex gap="2rem">
           <SocialMediaBlock />
+          <ToggleColorMode />
           <Flags />
         </Flex>
       </Flex>

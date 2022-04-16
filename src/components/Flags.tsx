@@ -4,7 +4,6 @@ import Flag from "react-flagkit";
 
 export function Flags() {
   const { pathname } = useRouter()
-  console.log(pathname)
   return (
     <Flex gap=".5rem" align="center">
       <Link href={`/pt-BR${pathname}`}>

@@ -10,7 +10,7 @@ interface NavigationLinkProps {
 export default function NavigationLink({ href, children }: NavigationLinkProps) {
   return (
     <Link href={href} passHref>
-      <ChakraLink color="whiteAlpha.900" _hover={
+      <ChakraLink _hover={
         {
           color: 'red.300',
           textDecoration: "none",
